@@ -1,0 +1,32 @@
+{
+  "name": "nearley-newick",
+  "version": "0.0.1",
+  "description": "Newick tree format parser using nearley.js",
+  "main": "index.js",
+  "scripts": {
+    "gen-parser": "nearleyc $GRAMMAR/$GRAMMAR.ne -o $GRAMMAR/$GRAMMAR.js",
+    "run-parser": "node parse.js $GRAMMAR",
+    "parse": "nearleyc grammars/$GRAMMAR/$GRAMMAR.ne -o grammars/$GRAMMAR/$GRAMMAR.js && node parse.js $GRAMMAR",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BetweenTwoTests/nearley-newick.git"
+  },
+  "keywords": [
+    "newick",
+    "nearley",
+    "phylogenetics",
+    "tree"
+  ],
+  "author": "BetweenTwoTests",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BetweenTwoTests/nearley-newick/issues"
+  },
+  "homepage": "https://github.com/BetweenTwoTests/nearley-newick#readme",
+  "dependencies": {
+    "aguid": "^2.0.0",
+    "nearley": "^2.20.1"
+  }
+}

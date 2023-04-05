@@ -1,0 +1,70 @@
+[
+  [
+    [
+      [
+        [
+          {
+            "id": "48a49150-9efe-4b0a-8a2d-60a40ed1a359",
+            "label": "8lion",
+            "metadata": {
+              "edgeWeightToParent": 1
+            },
+            "type": "leaf"
+          },
+          {
+            "id": "1d79aeee-e4fe-4b36-8c1c-0fefc560ed24",
+            "label": "t1ger",
+            "metadata": {
+              "edgeWeightToParent": 1
+            },
+            "type": "leaf"
+          }
+        ],
+        {
+          "id": "3495c3c4-5eae-488f-8d52-c03acbfc12b3",
+          "label": "sabertooth9",
+          "metadata": {
+            "edgeWeightToParent": 1
+          },
+          "type": "internal"
+        }
+      ],
+      [
+        [
+          {
+            "id": "de6da98d-e1a7-455a-8c9c-71919dfef6dd",
+            "label": "dog69",
+            "metadata": {
+              "edgeWeightToParent": 1
+            },
+            "type": "leaf"
+          },
+          {
+            "id": "f76b61b9-2db0-4bb7-8d6f-fab10f7bd546",
+            "label": "wolf",
+            "metadata": {
+              "edgeWeightToParent": 1
+            },
+            "type": "leaf"
+          }
+        ],
+        {
+          "id": "750f6259-2fb3-4bd5-8a00-5eb15eaa1152",
+          "label": "70direwolf",
+          "metadata": {
+            "edgeWeightToParent": 1
+          },
+          "type": "internal"
+        }
+      ]
+    ],
+    {
+      "id": "a7ac786b-235e-47b6-805d-52399640fe3c",
+      "label": "wea100sel",
+      "metadata": {
+        "edgeWeightToParent": 1
+      },
+      "type": "internal"
+    }
+  ]
+]
