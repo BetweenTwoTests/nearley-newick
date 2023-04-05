@@ -5,4 +5,7 @@ Newick tree format parser using nearley.js
 
 
 # Compile grammar and parse file
-`GRAMMAR=tree npm run parse -- tests/tree/label-with-numbers.tree`
+`GRAMMAR=tree npm run parse -- tests/example.tree`
+
+# Run test suite
+`GRAMMAR=tree npm run test`

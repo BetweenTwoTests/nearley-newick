@@ -125,77 +125,20 @@ var grammar = {
         },
     {"name": "Tree", "symbols": ["Subtree", {"literal":";"}]},
     {"name": "Tree", "symbols": ["Branch", {"literal":";"}]},
-    {"name": "Subtree", "symbols": ["Leaf"], "postprocess": 
-        data => {
-            require('../../graph_node')
-            const node = new GraphNode(data[0], "leaf")
-            console.log(JSON.stringify(node))
-            return node
-            return {
-                label: data[0],
-                type: "leaf"
-            }
-        }
-            },
-    {"name": "Subtree", "symbols": ["Internal"], "postprocess": 
-        data => {
-            console.log("Subtree->Internal")
-            console.log(data)
-            console.log(data[0].length, JSON.stringify(data))
-            console.log("-----")
-            console.log(JSON.stringify(data[0][0]))
-            console.log(JSON.stringify(data[0][1]))
-            console.log(JSON.stringify(data[0][2]))
-            console.log(JSON.stringify(data[0][3]))
-            console.log("====")
-        
-        
-            console.log("Lchid-0", JSON.stringify(data[0][1][0][0]))
-            console.log("Lchid-0", JSON.stringify(data[0][1][0][1]))
-            console.log("Lchid-2", JSON.stringify(data[0][1][2][0]))
-            console.log("Lchid-2", JSON.stringify(data[0][1][2][1]))
-            //console.log("Rchild", JSON.stringify(data[0][1][2]))
-        
-            return data
-        
-            //return {
-            //    label: data[0],
-            //    type: "leaf"
-            //}
-        }
-            },
-    {"name": "Leaf", "symbols": ["Name"], "postprocess": data => data[0]},
-    {"name": "Internal$ebnf$1", "symbols": ["Name"], "postprocess": id},
-    {"name": "Internal$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
-    {"name": "Internal", "symbols": [{"literal":"("}, "BranchSet", {"literal":")"}, "Internal$ebnf$1"], "postprocess": 
-        data => {
-            // console.log("// Internal");
-            // console.log([data[1], data[3]]);
-            // console.log(JSON.stringify([data[1], data[3]]));
-        
-            return data
-        }
-            },
-    {"name": "BranchSet", "symbols": ["Branch"], "postprocess": 
-        data => {
-            //console.log("BranchSet -> Branch")
-            //console.log(data)
-            //console.log(JSON.stringify(data))
-            return data
-        }
-            },
+    {"name": "Subtree", "symbols": ["Leaf"]},
+    {"name": "Subtree", "symbols": ["Internal"]},
+    {"name": "Leaf", "symbols": ["Name"]},
+    {"name": "Internal", "symbols": [{"literal":"("}, "BranchSet", {"literal":")"}, "Name"]},
+    {"name": "BranchSet", "symbols": ["Branch"]},
     {"name": "BranchSet", "symbols": ["Branch", {"literal":","}, "BranchSet"]},
-    {"name": "Branch$ebnf$1", "symbols": ["Length"], "postprocess": id},
-    {"name": "Branch$ebnf$1", "symbols": [], "postprocess": function(d) {return null;}},
-    {"name": "Branch", "symbols": ["Subtree", "Branch$ebnf$1"]},
+    {"name": "Branch", "symbols": ["Subtree", "Length"]},
+    {"name": "Name", "symbols": []},
+    {"name": "Name", "symbols": ["sqstring"], "postprocess": data => data[0]},
     {"name": "Name$ebnf$1", "symbols": [/[a-zA-Z0-9\-\_]/]},
     {"name": "Name$ebnf$1", "symbols": ["Name$ebnf$1", /[a-zA-Z0-9\-\_]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
     {"name": "Name", "symbols": ["Name$ebnf$1"], "postprocess": data => data[0].join("")},
-    {"name": "Length$ebnf$1$subexpression$1", "symbols": [{"literal":":"}, "decimal"]},
-    {"name": "Length$ebnf$1", "symbols": ["Length$ebnf$1$subexpression$1"]},
-    {"name": "Length$ebnf$1$subexpression$2", "symbols": [{"literal":":"}, "decimal"]},
-    {"name": "Length$ebnf$1", "symbols": ["Length$ebnf$1", "Length$ebnf$1$subexpression$2"], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "Length", "symbols": ["Length$ebnf$1"], "postprocess": data => data[0][0][1]}
+    {"name": "Length", "symbols": []},
+    {"name": "Length", "symbols": [{"literal":":"}, "decimal"], "postprocess": data => data[1]}
 ]
   , ParserStart: "Tree"
 }
