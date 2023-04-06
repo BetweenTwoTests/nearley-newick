@@ -1,68 +1,76 @@
 [
   [
+    "(",
+    [
+      {
+        "id": "81acaafb-961b-431e-80eb-65155e348639",
+        "nodeMetadata": {
+          "name": "Aa",
+          "edge_length": "0.1"
+        },
+        "type": "leaf"
+      }
+    ],
+    ",",
     [
       [
-        "(",
+        {
+          "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
+          "nodeMetadata": {
+            "name": "B",
+            "edge_length": "0.2"
+          },
+          "type": "leaf"
+        }
+      ],
+      ",",
+      [
         [
           [
+            "(",
             [
-              [
-                "Aa"
-              ]
-            ],
-            0.1
-          ],
-          ",",
-          [
-            [
-              [
-                [
-                  "B"
-                ]
-              ],
-              0.2
+              {
+                "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
+                "nodeMetadata": {
+                  "name": "C",
+                  "edge_length": "Not found"
+                },
+                "type": "leaf"
+              }
             ],
             ",",
             [
               [
-                [
-                  [
-                    "(",
-                    [
-                      [
-                        [
-                          [
-                            "C"
-                          ]
-                        ],
-                        0.3
-                      ],
-                      ",",
-                      [
-                        [
-                          [
-                            [
-                              "D"
-                            ]
-                          ],
-                          0.4
-                        ]
-                      ]
-                    ],
-                    ")",
-                    []
-                  ]
-                ],
-                0.5
+                {
+                  "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
+                  "nodeMetadata": {
+                    "name": "D",
+                    "edge_length": "Not found"
+                  },
+                  "type": "leaf"
+                }
               ]
-            ]
+            ],
+            ")",
+            {
+              "id": "54e2484e-38d8-4c41-8107-df1a696ff264",
+              "nodeMetadata": {
+                "name": "name_89f435ed-523a-4947-8d01-76d08826308d",
+                "edge_length": "0.5"
+              },
+              "type": "internal"
+            }
           ]
-        ],
-        ")",
-        []
+        ]
       ]
     ],
-    []
+    ")",
+    {
+      "nodeMetadata": {
+        "name": "name_bf099da3-2600-41a1-b5ed-8395763f3549",
+        "edge_length": "Not found"
+      }
+    }
   ],
   ";"
 ]

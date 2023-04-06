@@ -23,7 +23,7 @@ function main() {
             // console.log(JSON.stringify(ast));
             // console.log(JSON.stringify(ast, null, 2));
         } catch (e) {
-            console.log(`Parse failed: ${e.message}`)
+            console.log(`----> Parse failed: ${e.message}`)
         }
     }
 }

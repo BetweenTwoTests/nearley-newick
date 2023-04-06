@@ -1,0 +1,183 @@
+[
+  [
+    "(",
+    [
+      {
+        "id": "559aead0-264d-495d-8097-8cdd05abd495",
+        "nodeMetadata": {
+          "name": "A",
+          "edge_length": "Not found"
+        },
+        "type": "leaf"
+      }
+    ],
+    ",",
+    [
+      [
+        {
+          "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
+          "nodeMetadata": {
+            "name": "B",
+            "edge_length": "Not found"
+          },
+          "type": "leaf"
+        }
+      ],
+      ",",
+      [
+        [
+          [
+            "(",
+            [
+              [
+                "(",
+                [
+                  {
+                    "id": "6da43b94-e494-485e-8af0-1f93c6d9331c",
+                    "nodeMetadata": {
+                      "name": "J",
+                      "edge_length": "Not found"
+                    },
+                    "type": "leaf"
+                  }
+                ],
+                ",",
+                [
+                  [
+                    {
+                      "id": "86be9a55-62d3-4a30-8c28-6d044f5fc76e",
+                      "nodeMetadata": {
+                        "name": "K",
+                        "edge_length": "Not found"
+                      },
+                      "type": "leaf"
+                    }
+                  ]
+                ],
+                ")",
+                {
+                  "id": "ae4c8868-e19b-48b2-845d-db92330e4a9d",
+                  "nodeMetadata": {
+                    "name": "name_0e44e9b6-e42f-4a0b-9c95-2f2be350249a",
+                    "edge_length": "Not found"
+                  },
+                  "type": "internal"
+                }
+              ]
+            ],
+            ",",
+            [
+              [
+                {
+                  "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
+                  "nodeMetadata": {
+                    "name": "D",
+                    "edge_length": "Not found"
+                  },
+                  "type": "leaf"
+                }
+              ],
+              ",",
+              [
+                [
+                  [
+                    "(",
+                    [
+                      [
+                        "(",
+                        [
+                          {
+                            "id": "333e0a1e-7815-4cee-85c4-3fe3dc93d56c",
+                            "nodeMetadata": {
+                              "name": "G",
+                              "edge_length": "Not found"
+                            },
+                            "type": "leaf"
+                          }
+                        ],
+                        ",",
+                        [
+                          [
+                            {
+                              "id": "44bd7ae6-f478-4e10-8e11-7739f4b94d1d",
+                              "nodeMetadata": {
+                                "name": "H",
+                                "edge_length": "Not found"
+                              },
+                              "type": "leaf"
+                            }
+                          ],
+                          ",",
+                          [
+                            [
+                              {
+                                "id": "a83dd0cc-ffe3-4071-8317-df6e97f5c6b1",
+                                "nodeMetadata": {
+                                  "name": "I",
+                                  "edge_length": "Not found"
+                                },
+                                "type": "leaf"
+                              }
+                            ]
+                          ]
+                        ],
+                        ")",
+                        {
+                          "id": "8d41a397-1ce9-472a-8190-faa0a24d3091",
+                          "nodeMetadata": {
+                            "name": "name_a6e0440b-2acd-4ad1-9824-a12bec289228",
+                            "edge_length": "Not found"
+                          },
+                          "type": "internal"
+                        }
+                      ]
+                    ],
+                    ",",
+                    [
+                      [
+                        {
+                          "id": "f67ab10a-4e4c-4121-8a5f-4da9c10ddee9",
+                          "nodeMetadata": {
+                            "name": "F",
+                            "edge_length": "Not found"
+                          },
+                          "type": "leaf"
+                        }
+                      ]
+                    ],
+                    ")",
+                    {
+                      "id": "3a1ae80d-0934-49bc-86ce-ea007758d671",
+                      "nodeMetadata": {
+                        "name": "name_4c643eed-7d8a-4aa9-8df7-46fb4cc7c094",
+                        "edge_length": "Not found"
+                      },
+                      "type": "internal"
+                    }
+                  ]
+                ]
+              ]
+            ],
+            ")",
+            {
+              "id": "a636389b-124a-4306-8f8e-9fd3ebb811c3",
+              "nodeMetadata": {
+                "name": "name_04e1c7c2-88da-44f7-8a0b-bb7690669299",
+                "edge_length": "Not found"
+              },
+              "type": "internal"
+            }
+          ]
+        ]
+      ]
+    ],
+    ")",
+    {
+      "nodeMetadata": {
+        "name": "name_5ca62cb3-aab9-4673-9685-d4ade184fef3",
+        "edge_length": "Not found"
+      }
+    }
+  ],
+  ";"
+]

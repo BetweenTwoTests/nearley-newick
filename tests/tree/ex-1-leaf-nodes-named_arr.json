@@ -3,27 +3,35 @@
     "(",
     [
       {
-        "id": "81acaafb-961b-431e-80eb-65155e348639",
+        "id": "a950bfdf-7bb6-49c0-8c51-d3d07016a1cb",
         "nodeMetadata": {
-          "name": "Aa",
+          "name": "Aaa",
+          "parents": [],
           "edge_length": "Not found"
         },
         "type": "leaf"
+      },
+      {
+        "edge_length": "Not found"
       }
     ],
     ",",
     [
-      [
-        {
-          "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
-          "nodeMetadata": {
-            "name": "B",
-            "edge_length": "Not found"
-          },
-          "type": "leaf"
-        }
-      ],
-      ",",
+      {
+        "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
+        "nodeMetadata": {
+          "name": "B",
+          "parents": [],
+          "edge_length": "Not found"
+        },
+        "type": "leaf"
+      },
+      {
+        "edge_length": "Not found"
+      }
+    ],
+    ",",
+    [
       [
         [
           [
@@ -33,9 +41,13 @@
                 "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
                 "nodeMetadata": {
                   "name": "C",
+                  "parents": [],
                   "edge_length": "Not found"
                 },
                 "type": "leaf"
+              },
+              {
+                "edge_length": "Not found"
               }
             ],
             ",",
@@ -45,29 +57,38 @@
                   "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
                   "nodeMetadata": {
                     "name": "D",
+                    "parents": [],
                     "edge_length": "Not found"
                   },
                   "type": "leaf"
+                },
+                {
+                  "edge_length": "Not found"
                 }
               ]
             ],
             ")",
             {
-              "id": "9e90871e-d3e0-4754-8246-21074b765d42",
+              "id": "a9f51566-d670-47ea-8d54-b9deb449f795",
               "nodeMetadata": {
-                "name": "name_71d82296-cd2e-4ed2-877d-4a8ecf697c96",
+                "name": "E",
+                "parents": [],
                 "edge_length": "Not found"
               },
               "type": "internal"
             }
           ]
-        ]
+        ],
+        {
+          "edge_length": "Not found"
+        }
       ]
     ],
     ")",
     {
       "nodeMetadata": {
-        "name": "name_d71c88cc-1463-44fa-8899-d9953baba9ab",
+        "name": "F",
+        "parents": [],
         "edge_length": "Not found"
       }
     }

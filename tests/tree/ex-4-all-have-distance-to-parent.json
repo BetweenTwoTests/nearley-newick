@@ -1,68 +1,76 @@
 [
   [
+    "(",
+    [
+      {
+        "id": "22d93ed5-fd01-4765-86e2-7dc734ddb871",
+        "nodeMetadata": {
+          "name": "name_7036733f-b029-4811-83de-b416d19c48a5",
+          "edge_length": "0.1"
+        },
+        "type": "leaf"
+      }
+    ],
+    ",",
     [
       [
-        "(",
+        {
+          "id": "ad001dc5-8eed-4a6b-8433-2458aac91592",
+          "nodeMetadata": {
+            "name": "name_efcc2129-b267-4fa2-9faf-f773bab818bb",
+            "edge_length": "0.2"
+          },
+          "type": "leaf"
+        }
+      ],
+      ",",
+      [
         [
           [
+            "(",
             [
-              [
-                []
-              ]
-            ],
-            0.1
-          ],
-          ",",
-          [
-            [
-              [
-                [
-                  []
-                ]
-              ],
-              0.2
+              {
+                "id": "439a72f2-57c8-4523-8396-949003e69113",
+                "nodeMetadata": {
+                  "name": "name_115f5373-bb8a-4db3-89d3-64b471441248",
+                  "edge_length": "Not found"
+                },
+                "type": "leaf"
+              }
             ],
             ",",
             [
               [
-                [
-                  [
-                    "(",
-                    [
-                      [
-                        [
-                          [
-                            []
-                          ]
-                        ],
-                        0.3
-                      ],
-                      ",",
-                      [
-                        [
-                          [
-                            [
-                              []
-                            ]
-                          ],
-                          0.4
-                        ]
-                      ]
-                    ],
-                    ")",
-                    []
-                  ]
-                ],
-                0.5
+                {
+                  "id": "434e226f-b862-4f4a-8532-805c33f41953",
+                  "nodeMetadata": {
+                    "name": "name_3c3795cd-dfc7-46ea-9efe-e92605a5a1fe",
+                    "edge_length": "Not found"
+                  },
+                  "type": "leaf"
+                }
               ]
-            ]
+            ],
+            ")",
+            {
+              "id": "a75f9dac-87c5-4d18-860f-36acfd7faea2",
+              "nodeMetadata": {
+                "name": "name_fdd4bf21-9da1-4db7-b669-69a1721a2e2c",
+                "edge_length": "0.5"
+              },
+              "type": "internal"
+            }
           ]
-        ],
-        ")",
-        []
+        ]
       ]
     ],
-    0
+    ")",
+    {
+      "nodeMetadata": {
+        "name": "name_783ad834-0b65-4de0-b615-9c13fbb1a69a",
+        "edge_length": "0"
+      }
+    }
   ],
   ";"
 ]

@@ -1,69 +1,80 @@
 [
   [
+    "(",
     [
       [
         "(",
         [
+          {
+            "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
+            "nodeMetadata": {
+              "name": "B",
+              "edge_length": "Not found"
+            },
+            "type": "leaf"
+          }
+        ],
+        ",",
+        [
           [
             [
+              "(",
               [
-                "(",
+                {
+                  "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
+                  "nodeMetadata": {
+                    "name": "C",
+                    "edge_length": "0.3"
+                  },
+                  "type": "leaf"
+                }
+              ],
+              ",",
+              [
                 [
-                  [
-                    [
-                      [
-                        "B"
-                      ]
-                    ],
-                    0.2
-                  ],
-                  ",",
-                  [
-                    [
-                      [
-                        [
-                          "(",
-                          [
-                            [
-                              [
-                                [
-                                  "C"
-                                ]
-                              ],
-                              0.3
-                            ],
-                            ",",
-                            [
-                              [
-                                [
-                                  [
-                                    "D"
-                                  ]
-                                ],
-                                0.4
-                              ]
-                            ]
-                          ],
-                          ")",
-                          "E"
-                        ]
-                      ],
-                      0.5
-                    ]
-                  ]
-                ],
-                ")",
-                "F"
-              ]
-            ],
-            0.1
+                  {
+                    "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
+                    "nodeMetadata": {
+                      "name": "D",
+                      "edge_length": "0.4"
+                    },
+                    "type": "leaf"
+                  }
+                ]
+              ],
+              ")",
+              {
+                "id": "a9f51566-d670-47ea-8d54-b9deb449f795",
+                "nodeMetadata": {
+                  "name": "E",
+                  "edge_length": "Not found"
+                },
+                "type": "internal"
+              }
+            ]
           ]
         ],
         ")",
-        "Aa"
+        {
+          "id": "f67ab10a-4e4c-4121-8a5f-4da9c10ddee9",
+          "nodeMetadata": {
+            "name": "F",
+            "edge_length": "0.1"
+          },
+          "type": "internal"
+        }
       ]
     ],
-    []
+    ")",
+    {
+      "nodeMetadata": {
+        "name": "Aa",
+        "edge_length": "Not found"
+      },
+      "metadata": {
+        "id": "9d7aed1a-73fb-414f-a4d1-fe79522866c0"
+      }
+    }
   ],
   ";"
 ]

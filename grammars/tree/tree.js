@@ -123,24 +123,161 @@ var grammar = {
             return d.join("");
         }
         },
-    {"name": "Tree", "symbols": ["Subtree", {"literal":";"}]},
-    {"name": "Tree", "symbols": ["Branch", {"literal":";"}]},
-    {"name": "Subtree", "symbols": ["Leaf"]},
-    {"name": "Subtree", "symbols": ["Internal"]},
-    {"name": "Leaf", "symbols": ["Name"]},
-    {"name": "Internal", "symbols": [{"literal":"("}, "BranchSet", {"literal":")"}, "Name"]},
-    {"name": "BranchSet", "symbols": ["Branch"]},
-    {"name": "BranchSet", "symbols": ["Branch", {"literal":","}, "BranchSet"]},
-    {"name": "Branch", "symbols": ["Subtree", "Length"]},
-    {"name": "Name", "symbols": []},
-    {"name": "Name", "symbols": ["sqstring"], "postprocess": data => data[0]},
-    {"name": "Name$ebnf$1", "symbols": [/[a-zA-Z0-9\-\_]/]},
-    {"name": "Name$ebnf$1", "symbols": ["Name$ebnf$1", /[a-zA-Z0-9\-\_]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
-    {"name": "Name", "symbols": ["Name$ebnf$1"], "postprocess": data => data[0].join("")},
-    {"name": "Length", "symbols": []},
-    {"name": "Length", "symbols": [{"literal":":"}, "decimal"], "postprocess": data => data[1]}
+    {"name": "TreeWithRoot", "symbols": ["Tree"], "postprocess": 
+        data => {
+          // console.log("TreeWithRoot -> Tree")
+          
+          // Update root node with id, since that id is not created with Node -> NodeProps
+          for (i in data[0][0]) {
+            console.log(i, data[0][0][i]);
+            if (typeof data[0][0][i] !== 'string' && !Array.isArray(data[0][0][i]) &&  'nodeMetadata' in data[0][0][i]) {
+              const aguid = require('aguid');
+              data[0][0][i] = { id: aguid(), ...data[0][0][i] };
+            }
+          }      
+          return data[0];
+        }
+          },
+    {"name": "Tree", "symbols": ["RootLeaf", {"literal":";"}], "postprocess":  
+        data => {
+          // console.log("Root at leaf");
+          // for (node of data[0]) {
+          //   if (typeof node !== 'string' && !Array.isArray(node) && 'nodeMetadata' in node) {
+          //     const aguid = require('aguid');
+          //     node = { id: aguid(), ...node.nodeMetadata };
+          //   }
+          // }
+          return data;
+          // return [...data[0], data[1]]
+        }
+              },
+    {"name": "Tree", "symbols": ["RootInternal", {"literal":";"}], "postprocess":  
+        data => {
+          // console.log("Root at internal");
+          // console.log(data[0])
+          // for (node of data[0]) {
+          //   if (typeof node !== 'string' && !Array.isArray(node) &&  'nodeMetadata' in node) {
+          //     const aguid = require('aguid');
+          //     node = { id: aguid(), ...node.nodeMetadata };
+          //   }
+          // }
+          return data
+          // return [...data[0], data[1]]
+        }
+            },
+    {"name": "RootLeaf", "symbols": ["Node"], "postprocess": 
+        data => {
+          // console.log("RootLeaf -> Node");
+          // console.log(data)
+          return data;
+        }
+              },
+    {"name": "RootLeaf", "symbols": [{"literal":"("}, "Branch", {"literal":")"}, "Node"], "postprocess": 
+        data => {
+          // onsole.log("RootLeaf -> ( Branch Node )");
+          // console.log(data)
+          return data;
+        }
+            },
+    {"name": "RootInternal", "symbols": [{"literal":"("}, "Branch", {"literal":","}, "BranchSet", {"literal":")"}, "Node"], "postprocess": 
+        data => {
+          // console.log("RootLeaf -> ( Branch , BranchSet ) Node");
+          // console.log(data)
+          return data;
+          // return [data[0], data[1], data[2], ...data[3], data[4], data[5]];
+        }
+              },
+    {"name": "BranchSet", "symbols": ["Branch"], "postprocess": 
+        data => {
+          // console.log("BranchSet -> Branch")
+          // console.log(data);
+          return data;
+        }
+              },
+    {"name": "BranchSet", "symbols": ["Branch", {"literal":","}, "BranchSet"], "postprocess":  
+        data => {
+          // console.log(`BranchSet -> Branch "," BranchSet`)
+          // console.log(data);
+          return data;
+        }
+              },
+    {"name": "Branch", "symbols": ["Subtree", "OptionalLength"], "postprocess":  
+        data => { 
+          // Exclude OptionalLength
+          // since length info is in the node
+          return data[0]; 
+        }
+              },
+    {"name": "Subtree", "symbols": ["Leaf"], "postprocess":  
+        data => { 
+          return data;
+        } 
+            },
+    {"name": "Subtree", "symbols": ["Internal"], "postprocess": 
+        data => {
+          // console.log("Subtree");
+          // console.log(data);
+          return data
+        }
+              },
+    {"name": "Leaf", "symbols": ["Node"], "postprocess":  
+        data => {
+          const aguid = require('aguid');
+          return { 
+            id: aguid(data[0].nodeMetadata.name), 
+            ...data[0], 
+            type: "leaf" 
+          };
+        }
+              },
+    {"name": "Internal", "symbols": [{"literal":"("}, "BranchSet", {"literal":")"}, "Node"], "postprocess":  
+        data => {
+            // console.log("Internal > ( BranchSet ) Node");
+            // console.log(data)
+            const aguid = require('aguid');
+            
+            return [
+              data[0], 
+              ...data[1], 
+              data[2], 
+              { 
+                id: aguid(data[3].nodeMetadata.name), 
+                ...data[3], // metadata
+                type: "internal" 
+              }
+            ];
+            
+        }
+              },
+    {"name": "Node", "symbols": ["NodeProps"], "postprocess":  
+        data => {
+            const aguid = require('aguid');
+            const node = { 
+              nodeMetadata: { 
+                name: data[0][0] ? data[0][0] : "name_" + aguid(), 
+                ...data[0][1] 
+              }
+            }
+            return node;
+        }
+              },
+    {"name": "NodeProps", "symbols": ["OptionalString", "OptionalLength"]},
+    {"name": "OptionalString", "symbols": [], "postprocess": data => { return null; }},
+    {"name": "OptionalString$ebnf$1", "symbols": [/[a-zA-Z0-9\-\_]/]},
+    {"name": "OptionalString$ebnf$1", "symbols": ["OptionalString$ebnf$1", /[a-zA-Z0-9\-\_]/], "postprocess": function arrpush(d) {return d[0].concat([d[1]]);}},
+    {"name": "OptionalString", "symbols": ["OptionalString$ebnf$1"], "postprocess": data => { return data[0].join("") }},
+    {"name": "OptionalLength", "symbols": [], "postprocess":  
+        data => {
+          return { edge_length: "Not found" };
+        }
+              },
+    {"name": "OptionalLength", "symbols": [{"literal":":"}, "decimal"], "postprocess": 
+        data => {
+          return { edge_length: data[1].toString() }
+        }
+              }
 ]
-  , ParserStart: "Tree"
+  , ParserStart: "TreeWithRoot"
 }
 if (typeof module !== 'undefined'&& typeof module.exports !== 'undefined') {
    module.exports = grammar;
