@@ -9,8 +9,8 @@
     "run-generator": "node generate.js $GRAMMAR",
     "parse": "nearleyc grammars/$GRAMMAR/$GRAMMAR.ne -o grammars/$GRAMMAR/$GRAMMAR.js && node parse.js $GRAMMAR",
     "generate": "node generate.js $GRAMMAR",
-    "test-parse": "npm run parse tests/ex-0-no-nodes-named.tree,tests/ex-1-leaf-nodes-named.tree,tests/ex-2-all-nodes-named.tree,tests/ex-3-all-but-root-have-distance-to-parent.tree,tests/ex-4-all-have-distance-to-parent.tree,tests/ex-5-distances-and-leaf-names.tree,tests/ex-6-distances-and-all-names.tree,tests/ex-7-tree-rooted-on-leaf-node.tree,tests/branch-length.tree",
-    "test-generate": "npm run generate ast/$GRAMMAR/ex-0-no-nodes-named.ast,ast/$GRAMMAR/ex-1-leaf-nodes-named.ast,ast/$GRAMMAR/ex-2-all-nodes-named.ast,ast/$GRAMMAR/ex-3-all-but-root-have-distance-to-parent.ast,ast/$GRAMMAR/ex-4-all-have-distance-to-parent.ast,ast/$GRAMMAR/ex-5-distances-and-leaf-names.ast,ast/$GRAMMAR/ex-6-distances-and-all-names.ast,ast/$GRAMMAR/ex-7-tree-rooted-on-leaf-node.ast,ast/$GRAMMAR/branch-length.ast"
+    "test-parse": "npm run parse tests/ex-0-no-nodes-named.tree,tests/ex-1-leaf-nodes-named.tree,tests/ex-2-all-nodes-named.tree,tests/ex-3-all-but-root-have-distance-to-parent.tree,tests/ex-4-all-have-distance-to-parent.tree,tests/ex-5-distances-and-leaf-names.tree,tests/ex-6-distances-and-all-names.tree,tests/ex-7-tree-rooted-on-leaf-node.tree,tests/polytomy.tree",
+    "test-generate": "npm run generate ast/$GRAMMAR/ex-0-no-nodes-named.ast,ast/$GRAMMAR/ex-1-leaf-nodes-named.ast,ast/$GRAMMAR/ex-2-all-nodes-named.ast,ast/$GRAMMAR/ex-3-all-but-root-have-distance-to-parent.ast,ast/$GRAMMAR/ex-4-all-have-distance-to-parent.ast,ast/$GRAMMAR/ex-5-distances-and-leaf-names.ast,ast/$GRAMMAR/ex-6-distances-and-all-names.ast,ast/$GRAMMAR/ex-7-tree-rooted-on-leaf-node.ast,ast/$GRAMMAR/polytomy.ast"
   },
   "repository": {
     "type": "git",

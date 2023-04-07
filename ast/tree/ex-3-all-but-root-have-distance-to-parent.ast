@@ -1,77 +1,92 @@
 [
   [
-    "(",
-    [
-      [
-        {
-          "id": "a86d1038-3fa2-4f6b-80cb-42dcbfc46e62",
-          "nodeMetadata": {
-            "name": "name_cb51b240-66df-46cc-8da4-14ca08ecbc84",
-            "edge_length": "0.1"
-          },
-          "type": "leaf"
-        }
-      ]
-    ],
-    ",",
-    [
-      [
-        {
-          "id": "ffef1d1c-e2f9-4a5c-8258-7f25da0e692b",
-          "nodeMetadata": {
-            "name": "name_d9f38cf7-201e-4322-b7f0-9d96f445f8e8",
-            "edge_length": "0.2"
-          },
-          "type": "leaf"
-        }
-      ]
-    ],
-    ",",
     [
       "(",
       [
         [
-          {
-            "id": "382d0b08-6b86-474e-856a-8144d68e0a2a",
-            "nodeMetadata": {
-              "name": "name_377cae10-c628-4baa-b7e7-0135e0d1f695",
-              "edge_length": "Not found"
-            },
-            "type": "leaf"
-          }
-        ]
-      ],
-      ",",
-      [
+          [
+            {
+              "id": "4f2df8a1-8046-4dc4-84a7-0a6a5accc41e",
+              "nodeMetadata": {
+                "name": "name_89dc1c78-65d8-478d-8981-33457ed79825",
+                "edge_length": "0.1"
+              },
+              "type": "leaf"
+            }
+          ]
+        ],
+        ",",
         [
-          {
-            "id": "7413c856-1719-42ff-8520-931b29e6b5bf",
-            "nodeMetadata": {
-              "name": "name_aba2268d-7f55-4ebc-88b0-e992c4cfe429",
-              "edge_length": "Not found"
-            },
-            "type": "leaf"
-          }
+          [
+            [
+              {
+                "id": "bb1be4fd-8b84-4669-897e-76512713b10b",
+                "nodeMetadata": {
+                  "name": "name_434272c7-1a73-4f01-b279-15e6dd6c7b48",
+                  "edge_length": "0.2"
+                },
+                "type": "leaf"
+              }
+            ]
+          ],
+          ",",
+          [
+            [
+              [
+                "(",
+                [
+                  [
+                    [
+                      {
+                        "id": "9a3df82c-48d5-43af-83a5-b22b23540f30",
+                        "nodeMetadata": {
+                          "name": "name_3b7d5941-38ae-4d0f-9efc-624de3e30b89",
+                          "edge_length": "Not found"
+                        },
+                        "type": "leaf"
+                      }
+                    ]
+                  ],
+                  ",",
+                  [
+                    [
+                      [
+                        {
+                          "id": "673eea87-7616-41ff-83c1-d33e2b8f1f3c",
+                          "nodeMetadata": {
+                            "name": "name_572c9512-6462-49a3-937c-5ebbdde2c257",
+                            "edge_length": "Not found"
+                          },
+                          "type": "leaf"
+                        }
+                      ]
+                    ]
+                  ]
+                ],
+                ")",
+                {
+                  "id": "d9fe7e3c-5fca-4252-8a40-02cc0ca30461",
+                  "nodeMetadata": {
+                    "name": "name_fdc341db-5cb3-402b-a344-a9c1d06b623f",
+                    "edge_length": "0.5"
+                  },
+                  "type": "internal"
+                }
+              ]
+            ]
+          ]
         ]
       ],
       ")",
       {
-        "id": "61168811-3f1a-46a4-8279-86cfe86ae195",
+        "id": "b78bda98-c8fd-4cdb-8a74-8e33f3225c36",
         "nodeMetadata": {
-          "name": "name_be6ec79f-7bb5-4d85-96bf-2ff5e2e18213",
-          "edge_length": "0.5"
+          "name": "name_335ea6f7-1758-49e6-a9a8-62182a04fd0a",
+          "edge_length": "Not found"
         },
         "type": "internal"
       }
-    ],
-    ")",
-    {
-      "id": "f38243dd-b8bf-4ca0-a320-ea80f074f2d9",
-      "nodeMetadata": {
-        "name": "name_76e8f5d0-4e80-4e30-acab-6793b76e47b4",
-        "edge_length": "Not found"
-      }
-    }
+    ]
   ],
   ";"
 ]

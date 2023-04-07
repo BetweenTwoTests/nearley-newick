@@ -2,10 +2,7 @@
 @builtin "number.ne"     # `int`, `decimal`, and `percentage` number primitives
 @builtin "string.ne"     # `dqstring`, `sqstring`, `btstring`, `dstrchar`, `sstrchar`, `strescape`
 
-# Only works for trees not rooted at leaf
-# Tree -> 
-#     Subtree ";"
-#   | Branch ";"
+
 
 TreeWithRoot -> Tree
   {%
@@ -24,72 +21,78 @@ TreeWithRoot -> Tree
     }
   %}
 
+# Only works for trees not rooted at leaf
 Tree -> 
-    RootLeaf ";" 
-      {% 
-        data => {
-          // console.log("Root at leaf");
-          // for (node of data[0]) {
-          //   if (typeof node !== 'string' && !Array.isArray(node) && 'nodeMetadata' in node) {
-          //     const aguid = require('aguid');
-          //     node = { id: aguid(), ...node.nodeMetadata };
-          //   }
-          // }
-          return data;
-          // return [...data[0], data[1]]
-        }
-      %}
-  | RootInternal ";"
-    {% 
-      data => {
-        // console.log("Root at internal");
-        // console.log(data[0])
-        // for (node of data[0]) {
-        //   if (typeof node !== 'string' && !Array.isArray(node) &&  'nodeMetadata' in node) {
-        //     const aguid = require('aguid');
-        //     node = { id: aguid(), ...node.nodeMetadata };
-        //   }
-        // }
-        return data
-        // return [...data[0], data[1]]
-      }
-    %}
+    Subtree ";"
+  | Branch ";"
 
-RootLeaf ->
-    Node
-      {%
-        data => {
-          // console.log("RootLeaf -> Node");
-          // console.log(data)
-          return data;
-        }
-      %}
-  | "(" Branch ")" Node 
-    {%
-      data => {
-        // onsole.log("RootLeaf -> ( Branch Node )");
-        // console.log(data)
-        return data;
-      }
-    %}
-
-RootInternal ->
-    "(" Branch "," BranchSet ")" Node
-      {%
-        data => {
-          // console.log("RootLeaf -> ( Branch , BranchSet ) Node");
-          // console.log(data)
-          // return data;
-          return [data[0], data[1], data[2], ...data[3], data[4], data[5]];
-        }
-      %}
+# 
+# Tree -> 
+#     RootLeaf ";" 
+#       {% 
+#         data => {
+#           // console.log("Root at leaf");
+#           // for (node of data[0]) {
+#           //   if (typeof node !== 'string' && !Array.isArray(node) && 'nodeMetadata' in node) {
+#           //     const aguid = require('aguid');
+#           //     node = { id: aguid(), ...node.nodeMetadata };
+#           //   }
+#           // }
+#           return data;
+#           // return [...data[0], data[1]]
+#         }
+#       %}
+#   | RootInternal ";"
+#     {% 
+#       data => {
+#         // console.log("Root at internal");
+#         // console.log(data[0])
+#         // for (node of data[0]) {
+#         //   if (typeof node !== 'string' && !Array.isArray(node) &&  'nodeMetadata' in node) {
+#         //     const aguid = require('aguid');
+#         //     node = { id: aguid(), ...node.nodeMetadata };
+#         //   }
+#         // }
+#         return data
+#         // return [...data[0], data[1]]
+#       }
+#     %}
+# 
+# RootLeaf ->
+#     Node
+#       {%
+#         data => {
+#           // console.log("RootLeaf -> Node");
+#           // console.log(data)
+#           return data;
+#         }
+#       %}
+#   | "(" Branch ")" Node 
+#     {%
+#       data => {
+#         // console.log("RootLeaf -> ( Branch Node )");
+#         // console.log(data)
+#         return data;
+#       }
+#     %}
+# 
+# RootInternal ->
+#     "(" Branch "," BranchSet ")" Node
+#       {%
+#         data => {
+#           // console.log("RootLeaf -> ( Branch , BranchSet ) Node");
+#           // console.log(data)
+#           // return data;
+#           return [data[0], data[1], data[2], ...data[3], data[4], data[5]];
+#         }
+#       %}
 
 BranchSet ->
     Branch 
       {%
         data => {
           // console.log("BranchSet -> Branch")
-          // console.log(data);
+          // console.log(JSON.stringify(data));
           return data;
         }
       %}
@@ -97,8 +100,9 @@ BranchSet ->
       {% 
         data => {
           // console.log(`BranchSet -> Branch "," BranchSet`)
-          // console.log(data);
-          return [data[0], data[1], data[2][0]];
+          // console.log(JSON.stringify(data));
+          // return [data[0], data[1], data[2][0]];
+          return [data[0], data[1], data[2]];
         }
       %}
 
@@ -124,7 +128,7 @@ Subtree ->
         data => {
           // console.log("Subtree");
           // console.log(data);
-          return data[0]
+          return data
         }
       %}
 
@@ -151,7 +155,7 @@ Internal ->
             
             return [
               data[0], 
-              ...data[1], 
+              data[1], 
               data[2], 
               { 
                 id: aguid(data[3].nodeMetadata.name), 

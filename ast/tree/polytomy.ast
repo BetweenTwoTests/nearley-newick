@@ -1,0 +1,215 @@
+[
+  [
+    [
+      "(",
+      [
+        [
+          [
+            {
+              "id": "559aead0-264d-495d-8097-8cdd05abd495",
+              "nodeMetadata": {
+                "name": "A",
+                "edge_length": "Not found"
+              },
+              "type": "leaf"
+            }
+          ]
+        ],
+        ",",
+        [
+          [
+            [
+              {
+                "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
+                "nodeMetadata": {
+                  "name": "B",
+                  "edge_length": "Not found"
+                },
+                "type": "leaf"
+              }
+            ]
+          ],
+          ",",
+          [
+            [
+              [
+                "(",
+                [
+                  [
+                    [
+                      "(",
+                      [
+                        [
+                          [
+                            {
+                              "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
+                              "nodeMetadata": {
+                                "name": "C",
+                                "edge_length": "Not found"
+                              },
+                              "type": "leaf"
+                            }
+                          ]
+                        ],
+                        ",",
+                        [
+                          [
+                            [
+                              {
+                                "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
+                                "nodeMetadata": {
+                                  "name": "D",
+                                  "edge_length": "Not found"
+                                },
+                                "type": "leaf"
+                              }
+                            ]
+                          ]
+                        ]
+                      ],
+                      ")",
+                      {
+                        "id": "a9f51566-d670-47ea-8d54-b9deb449f795",
+                        "nodeMetadata": {
+                          "name": "E",
+                          "edge_length": "Not found"
+                        },
+                        "type": "internal"
+                      }
+                    ]
+                  ],
+                  ",",
+                  [
+                    [
+                      [
+                        {
+                          "id": "f67ab10a-4e4c-4121-8a5f-4da9c10ddee9",
+                          "nodeMetadata": {
+                            "name": "F",
+                            "edge_length": "Not found"
+                          },
+                          "type": "leaf"
+                        }
+                      ]
+                    ],
+                    ",",
+                    [
+                      [
+                        [
+                          "(",
+                          [
+                            [
+                              [
+                                "(",
+                                [
+                                  [
+                                    [
+                                      {
+                                        "id": "44bd7ae6-f478-4e10-8e11-7739f4b94d1d",
+                                        "nodeMetadata": {
+                                          "name": "H",
+                                          "edge_length": "Not found"
+                                        },
+                                        "type": "leaf"
+                                      }
+                                    ]
+                                  ],
+                                  ",",
+                                  [
+                                    [
+                                      [
+                                        {
+                                          "id": "6da43b94-e494-485e-8af0-1f93c6d9331c",
+                                          "nodeMetadata": {
+                                            "name": "J",
+                                            "edge_length": "Not found"
+                                          },
+                                          "type": "leaf"
+                                        }
+                                      ]
+                                    ],
+                                    ",",
+                                    [
+                                      [
+                                        [
+                                          {
+                                            "id": "a83dd0cc-ffe3-4071-8317-df6e97f5c6b1",
+                                            "nodeMetadata": {
+                                              "name": "I",
+                                              "edge_length": "Not found"
+                                            },
+                                            "type": "leaf"
+                                          }
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ],
+                                ")",
+                                {
+                                  "id": "333e0a1e-7815-4cee-85c4-3fe3dc93d56c",
+                                  "nodeMetadata": {
+                                    "name": "G",
+                                    "edge_length": "Not found"
+                                  },
+                                  "type": "internal"
+                                }
+                              ]
+                            ],
+                            ",",
+                            [
+                              [
+                                [
+                                  {
+                                    "id": "86be9a55-62d3-4a30-8c28-6d044f5fc76e",
+                                    "nodeMetadata": {
+                                      "name": "K",
+                                      "edge_length": "Not found"
+                                    },
+                                    "type": "leaf"
+                                  }
+                                ]
+                              ]
+                            ]
+                          ],
+                          ")",
+                          {
+                            "id": "72dfcfb0-470a-455c-883f-8fe38de8a128",
+                            "nodeMetadata": {
+                              "name": "L",
+                              "edge_length": "Not found"
+                            },
+                            "type": "internal"
+                          }
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                ")",
+                {
+                  "id": "08f27188-ce94-47da-82d5-63bae19d5519",
+                  "nodeMetadata": {
+                    "name": "M",
+                    "edge_length": "Not found"
+                  },
+                  "type": "internal"
+                }
+              ]
+            ]
+          ]
+        ]
+      ],
+      ")",
+      {
+        "id": "8ce86a6a-65d3-42e7-85e2-58ac62eebd97",
+        "nodeMetadata": {
+          "name": "N",
+          "edge_length": "Not found"
+        },
+        "type": "internal"
+      }
+    ]
+  ],
+  ";"
+]

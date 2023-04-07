@@ -1,77 +1,92 @@
 [
   [
-    "(",
-    [
-      [
-        {
-          "id": "81acaafb-961b-431e-80eb-65155e348639",
-          "nodeMetadata": {
-            "name": "Aa",
-            "edge_length": "Not found"
-          },
-          "type": "leaf"
-        }
-      ]
-    ],
-    ",",
-    [
-      [
-        {
-          "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
-          "nodeMetadata": {
-            "name": "B",
-            "edge_length": "Not found"
-          },
-          "type": "leaf"
-        }
-      ]
-    ],
-    ",",
     [
       "(",
       [
         [
-          {
-            "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
-            "nodeMetadata": {
-              "name": "C",
-              "edge_length": "Not found"
-            },
-            "type": "leaf"
-          }
-        ]
-      ],
-      ",",
-      [
+          [
+            {
+              "id": "81acaafb-961b-431e-80eb-65155e348639",
+              "nodeMetadata": {
+                "name": "Aa",
+                "edge_length": "Not found"
+              },
+              "type": "leaf"
+            }
+          ]
+        ],
+        ",",
         [
-          {
-            "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
-            "nodeMetadata": {
-              "name": "D",
-              "edge_length": "Not found"
-            },
-            "type": "leaf"
-          }
+          [
+            [
+              {
+                "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
+                "nodeMetadata": {
+                  "name": "B",
+                  "edge_length": "Not found"
+                },
+                "type": "leaf"
+              }
+            ]
+          ],
+          ",",
+          [
+            [
+              [
+                "(",
+                [
+                  [
+                    [
+                      {
+                        "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
+                        "nodeMetadata": {
+                          "name": "C",
+                          "edge_length": "Not found"
+                        },
+                        "type": "leaf"
+                      }
+                    ]
+                  ],
+                  ",",
+                  [
+                    [
+                      [
+                        {
+                          "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
+                          "nodeMetadata": {
+                            "name": "D",
+                            "edge_length": "Not found"
+                          },
+                          "type": "leaf"
+                        }
+                      ]
+                    ]
+                  ]
+                ],
+                ")",
+                {
+                  "id": "32ae82ab-04c9-4ad1-8ced-9cbec459e84f",
+                  "nodeMetadata": {
+                    "name": "name_db70aa69-86af-4a44-8605-5f9b2fdf6035",
+                    "edge_length": "Not found"
+                  },
+                  "type": "internal"
+                }
+              ]
+            ]
+          ]
         ]
       ],
       ")",
       {
-        "id": "c9acafca-8610-47d9-8eca-1f3a46c780ee",
+        "id": "87264564-6505-41b7-8869-cff90b1c8ab9",
         "nodeMetadata": {
-          "name": "name_9b2e0359-656c-4df0-af40-7213df229977",
+          "name": "name_d1a17033-10ce-4979-a8bc-374bbdbc1923",
           "edge_length": "Not found"
         },
         "type": "internal"
       }
-    ],
-    ")",
-    {
-      "id": "b6fa05bb-4f7a-41b8-a941-9ac8caf598b6",
-      "nodeMetadata": {
-        "name": "name_71c0ae7f-3b1f-4b7f-bbfb-8edcd825ce05",
-        "edge_length": "Not found"
-      }
-    }
+    ]
   ],
   ";"
 ]

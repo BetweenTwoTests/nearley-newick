@@ -138,67 +138,21 @@ var grammar = {
           return data[0];
         }
           },
-    {"name": "Tree", "symbols": ["RootLeaf", {"literal":";"}], "postprocess":  
-        data => {
-          // console.log("Root at leaf");
-          // for (node of data[0]) {
-          //   if (typeof node !== 'string' && !Array.isArray(node) && 'nodeMetadata' in node) {
-          //     const aguid = require('aguid');
-          //     node = { id: aguid(), ...node.nodeMetadata };
-          //   }
-          // }
-          return data;
-          // return [...data[0], data[1]]
-        }
-              },
-    {"name": "Tree", "symbols": ["RootInternal", {"literal":";"}], "postprocess":  
-        data => {
-          // console.log("Root at internal");
-          // console.log(data[0])
-          // for (node of data[0]) {
-          //   if (typeof node !== 'string' && !Array.isArray(node) &&  'nodeMetadata' in node) {
-          //     const aguid = require('aguid');
-          //     node = { id: aguid(), ...node.nodeMetadata };
-          //   }
-          // }
-          return data
-          // return [...data[0], data[1]]
-        }
-            },
-    {"name": "RootLeaf", "symbols": ["Node"], "postprocess": 
-        data => {
-          // console.log("RootLeaf -> Node");
-          // console.log(data)
-          return data;
-        }
-              },
-    {"name": "RootLeaf", "symbols": [{"literal":"("}, "Branch", {"literal":")"}, "Node"], "postprocess": 
-        data => {
-          // onsole.log("RootLeaf -> ( Branch Node )");
-          // console.log(data)
-          return data;
-        }
-            },
-    {"name": "RootInternal", "symbols": [{"literal":"("}, "Branch", {"literal":","}, "BranchSet", {"literal":")"}, "Node"], "postprocess": 
-        data => {
-          // console.log("RootLeaf -> ( Branch , BranchSet ) Node");
-          // console.log(data)
-          // return data;
-          return [data[0], data[1], data[2], ...data[3], data[4], data[5]];
-        }
-              },
+    {"name": "Tree", "symbols": ["Subtree", {"literal":";"}]},
+    {"name": "Tree", "symbols": ["Branch", {"literal":";"}]},
     {"name": "BranchSet", "symbols": ["Branch"], "postprocess": 
         data => {
           // console.log("BranchSet -> Branch")
-          // console.log(data);
+          // console.log(JSON.stringify(data));
           return data;
         }
               },
     {"name": "BranchSet", "symbols": ["Branch", {"literal":","}, "BranchSet"], "postprocess":  
         data => {
           // console.log(`BranchSet -> Branch "," BranchSet`)
-          // console.log(data);
-          return [data[0], data[1], data[2][0]];
+          // console.log(JSON.stringify(data));
+          // return [data[0], data[1], data[2][0]];
+          return [data[0], data[1], data[2]];
         }
               },
     {"name": "Branch", "symbols": ["Subtree", "OptionalLength"], "postprocess":  
@@ -217,7 +171,7 @@ var grammar = {
         data => {
           // console.log("Subtree");
           // console.log(data);
-          return data[0]
+          return data
         }
               },
     {"name": "Leaf", "symbols": ["Node"], "postprocess":  
@@ -238,7 +192,7 @@ var grammar = {
             
             return [
               data[0], 
-              ...data[1], 
+              data[1], 
               data[2], 
               { 
                 id: aguid(data[3].nodeMetadata.name), 
