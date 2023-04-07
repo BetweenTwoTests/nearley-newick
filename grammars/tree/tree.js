@@ -222,7 +222,7 @@ var grammar = {
     {"name": "OptionalString", "symbols": ["OptionalString$ebnf$1"], "postprocess": data => { return data[0].join("") }},
     {"name": "OptionalLength", "symbols": [], "postprocess":  
         data => {
-          return { edge_length: "Not found" };
+          return { edge_length: "" };
         }
               },
     {"name": "OptionalLength", "symbols": [{"literal":":"}, "decimal"], "postprocess": 

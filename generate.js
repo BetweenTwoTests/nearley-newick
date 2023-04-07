@@ -17,73 +17,77 @@ function main() {
 
 function json_to_graph(ast) {
     const nodes = ast[0]; // array of parent and direct children, `Tree` nonterminal in nearley  
-    const rootNode = nodes[find_idx_of_parent_from_newick_nodes(nodes)]; // assumed to exist  
-    return newick_nodes_to_graph([nodes], rootNode);
+    const rootNode = nodes[find_idx_of_parent_from_newick_treeArr(nodes)]; // assumed to exist  
+    return newick_treeArr_to_graph([nodes], rootNode);
 }
 
-function newick_nodes_to_graph(startingNodes, closestAncestorNode={}) {
-    // const nodes = newick_node_is_polytomy(startingNodes) ? startingNodes[0][0]: startingNodes[0];
-    const nodes = startingNodes[0];
+function newick_treeArr_to_graph(startingTreeArr, closestAncestorNode={}) {
+    const treeArr = startingTreeArr[0];
 
     let newParentNodeInThisIteration = {}; // update if new internal node is found
 
-    let childNodeArray = []; // polytomy is represented as nested binary, so this is always length <=2 
-    const nodeConnection = [];
-    const idxOfChildNodeArrFromNodes = find_idx_of_children_from_newick_nodes(nodes); 
+    const edges = [];
+    const nodes = []
+
+    let subTreeArr = []; // polytomy at the actual tree can be represented as nested subTreeArr
+    const idxOfSubTreeArrFromTreeArr = find_idx_of_children_from_newick_nodes(treeArr); 
     
-    // console.log('// nodes:\n', JSON.stringify(nodes))
-    // console.log(`\n//idxOfChildNodeArrFromNodes: ${idxOfChildNodeArrFromNodes} / ${nodes.length-1}`);
+    // console.log('// treeArr:\n', JSON.stringify(treeArr))
+    // console.log(`\n//idxOfSubTreeArrFromTreeArr: ${idxOfSubTreeArrFromTreeArr} (out of max idx: ${treeArr.length-1})`);
     
-    for (const i in nodes) {
-        // console.log(`// testing ${i}:\n`, JSON.stringify(nodes[i]));
-        if (idxOfChildNodeArrFromNodes.includes(i)) { // if (Array.isArray(nodes[i]) && Array.isArray(nodes[i].at(0))) {
-            // subtree
-            if (childNodeArray.length >= 2) {
+    for (const i in treeArr) {
+        // console.log(`// testing ${i}:\n`, JSON.stringify(treeArr[i]));
+        if (idxOfSubTreeArrFromTreeArr.includes(i)) {
+            if (subTreeArr.length >= 2) {
+                // TODO verify if this is true
                 throw new Error("There cannot be more than array containing children");
             }
-            childNodeArray.push([nodes[i]]);
             // console.log("// found child")
+            subTreeArr.push([treeArr[i]]);
         }
-        else if (newick_node_is_leaf(nodes[i])) {
-            // isLeaf
-            nodeConnection.push({
-                parentNodeId: closestAncestorNode.id,
-                ...newick_node_get_leaf(nodes[i])
-            });
+        else if (newick_node_is_leaf(treeArr[i])) {
             // console.log("// found leaf")
+            nodes.push(newick_node_get_leaf(treeArr[i]));
+            edges.push({
+                id: closestAncestorNode.id + ":" + treeArr[i].id,
+                dir: "uni",
+                weight: newick_node_get_leaf(treeArr[i]).nodeMetadata.edge_length
+            });
         }
-        else if (newick_node_is_internal(nodes[i])) {
-            nodeConnection.push({
-                parentNodeId: closestAncestorNode.id,
-                ...nodes[i]
+        else if (newick_node_is_internal(treeArr[i])) {
+            // console.log("// found internal node")
+            nodes.push(treeArr[i])
+            edges.push({
+                id: closestAncestorNode.id + ":" + treeArr[i].id,
+                dir: "uni",
+                weight: treeArr[i].nodeMetadata.edge_length
             })
-            
-            // Replace new parent
-            newParentNodeInThisIteration = nodes[i]
-            // console.log("// found internal")
+            // Set new parent to be passed off to next iteration
+            newParentNodeInThisIteration = treeArr[i]
         }
         // else {
+        //     // "(", ")", and ","
         //     console.log("// found nothing")
         // }
     }
     // console.log("// -- Loop end");
 
-    // let parentNode = newParentNodeInThisIteration ? newParentNodeInThisIteration : closestAncestorNode;
-    
     // console.log("// closestAncestorNode: ", JSON.stringify(closestAncestorNode));
     // console.log("// newParentNodeInThisIteration: ", JSON.stringify(newParentNodeInThisIteration));
-    // console.log(`// nodeConnection: ${nodeConnection.length}`)
-    // console.log(`// child: ${childNodeArray.length}`); // : \n`, JSON.stringify(childNodeArray));
+    // console.log(`// edges: ${edges.length}`)
+    // console.log(`// subTreeArr: ${subTreeArr.length}`); // : \n`, JSON.stringify(subTreeArr));
     
-    nodeConnection.forEach((edge) => {
+    nodes.forEach((node) => {
+        console.log("// node: ", JSON.stringify(node));
+    });
+    edges.forEach((edge) => {
         // edge.parentNodeId is undefined for root
-        if (edge.parentNodeId && 'parentNodeId' in edge) {
-            // TODO use graph class to save edge
-            console.log("// Found node-connection", JSON.stringify(edge))
-        }
+        // if (edge.parentNodeId && 'parentNodeId' in edge) {
+            console.log("// edge: ", JSON.stringify(edge));
+        // }
     });
 
-    if (childNodeArray.length === 0) {
+    if (subTreeArr.length === 0) {
         // base case
         // console.log("// ---> reached terminal level")
         return;
@@ -96,9 +100,10 @@ function newick_nodes_to_graph(startingNodes, closestAncestorNode={}) {
         closestAncestorNodeForNextIteration = closestAncestorNode
     }
 
-    for (const i in childNodeArray) {
-        // console.log(`// Running Recursive ${JSON.stringify(childNodeArray[i])}`);
-        newick_nodes_to_graph(childNodeArray[i], closestAncestorNodeForNextIteration);
+    // TODO prevent stack blowing up for deep trees
+    for (const i in subTreeArr) {
+        // console.log(`// Running Recursive ${JSON.stringify(subTreeArr[i])}`);
+        newick_treeArr_to_graph(subTreeArr[i], closestAncestorNodeForNextIteration);
     }
     return;
 }
@@ -130,7 +135,7 @@ function newick_node_is_internal(node) {
         && 'nodeMetadata' in node)
 }
 
-function find_idx_of_parent_from_newick_nodes(astNodeArr) {
+function find_idx_of_parent_from_newick_treeArr(astNodeArr) {
     for (const i in astNodeArr) {
         if (typeof astNodeArr[i] !== 'string' // skip : ( , ) ;
             && !Array.isArray(astNodeArr[i]) // array is subtree

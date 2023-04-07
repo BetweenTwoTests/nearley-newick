@@ -41,7 +41,7 @@
                         "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
                         "nodeMetadata": {
                           "name": "C",
-                          "edge_length": "Not found"
+                          "edge_length": ""
                         },
                         "type": "leaf"
                       }
@@ -55,7 +55,7 @@
                           "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
                           "nodeMetadata": {
                             "name": "D",
-                            "edge_length": "Not found"
+                            "edge_length": ""
                           },
                           "type": "leaf"
                         }
@@ -82,7 +82,7 @@
         "id": "f67ab10a-4e4c-4121-8a5f-4da9c10ddee9",
         "nodeMetadata": {
           "name": "F",
-          "edge_length": "Not found"
+          "edge_length": ""
         },
         "type": "internal"
       }

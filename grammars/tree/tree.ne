@@ -2,8 +2,6 @@
 @builtin "number.ne"     # `int`, `decimal`, and `percentage` number primitives
 @builtin "string.ne"     # `dqstring`, `sqstring`, `btstring`, `dstrchar`, `sstrchar`, `strescape`
 
-
-
 TreeWithRoot -> Tree
   {%
     data => {
@@ -21,7 +19,6 @@ TreeWithRoot -> Tree
     }
   %}
 
-# Only works for trees not rooted at leaf
 Tree -> 
     Subtree ";"
   | Branch ";"
@@ -196,7 +193,7 @@ OptionalLength ->
     null 
       {% 
         data => {
-          return { edge_length: "Not found" };
+          return { edge_length: "" };
         }
       %}
   | ":" decimal 

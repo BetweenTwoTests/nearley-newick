@@ -41,7 +41,7 @@
                         "id": "6b23c0d5-35d1-41f9-883f-b0a617355deb",
                         "nodeMetadata": {
                           "name": "C",
-                          "edge_length": "Not found"
+                          "edge_length": ""
                         },
                         "type": "leaf"
                       }
@@ -55,7 +55,7 @@
                           "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
                           "nodeMetadata": {
                             "name": "D",
-                            "edge_length": "Not found"
+                            "edge_length": ""
                           },
                           "type": "leaf"
                         }
@@ -65,9 +65,9 @@
                 ],
                 ")",
                 {
-                  "id": "56206162-7699-4662-86cf-fe55ec78db90",
+                  "id": "ad3bbe50-d14e-4a60-8282-1e67ce88bddc",
                   "nodeMetadata": {
-                    "name": "name_4efb92d3-3f0f-4648-b716-b240fb0bc72e",
+                    "name": "name_b74e52c1-6331-4160-86df-409d6a587f67",
                     "edge_length": "0.5"
                   },
                   "type": "internal"
@@ -79,10 +79,10 @@
       ],
       ")",
       {
-        "id": "b3984ad5-07c2-4a58-8e32-60484bb26302",
+        "id": "ebe896e0-9044-4085-8778-a711bcfee972",
         "nodeMetadata": {
-          "name": "name_f1aa8aba-26fd-45f7-b4cc-03c7ce9ff98b",
-          "edge_length": "Not found"
+          "name": "name_18aebe53-054c-425b-97dc-8cb35f5d478b",
+          "edge_length": ""
         },
         "type": "internal"
       }
