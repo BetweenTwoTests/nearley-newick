@@ -1,0 +1,102 @@
+[
+  [
+    "(",
+    [
+      [
+        {
+          "id": "559aead0-264d-495d-8097-8cdd05abd495",
+          "nodeMetadata": {
+            "name": "A",
+            "edge_length": "Not found"
+          },
+          "type": "leaf"
+        }
+      ]
+    ],
+    ",",
+    [
+      [
+        {
+          "id": "df7e70e5-2154-4483-8bee-4a9e3789febc",
+          "nodeMetadata": {
+            "name": "B",
+            "edge_length": "Not found"
+          },
+          "type": "leaf"
+        }
+      ]
+    ],
+    ",",
+    [
+      "(",
+      [
+        "(",
+        [
+          [
+            {
+              "id": "6da43b94-e494-485e-8af0-1f93c6d9331c",
+              "nodeMetadata": {
+                "name": "J",
+                "edge_length": "Not found"
+              },
+              "type": "leaf"
+            }
+          ]
+        ],
+        ",",
+        [
+          [
+            {
+              "id": "86be9a55-62d3-4a30-8c28-6d044f5fc76e",
+              "nodeMetadata": {
+                "name": "K",
+                "edge_length": "Not found"
+              },
+              "type": "leaf"
+            }
+          ]
+        ],
+        ")",
+        {
+          "id": "c03d032d-d855-4d3e-871e-3f6ac7ff81ed",
+          "nodeMetadata": {
+            "name": "name_f896bded-d951-42e3-8a53-0173f58f8901",
+            "edge_length": "Not found"
+          },
+          "type": "internal"
+        }
+      ],
+      ",",
+      [
+        [
+          {
+            "id": "3f39d5c3-8e5b-4d06-842c-14e6cc571583",
+            "nodeMetadata": {
+              "name": "D",
+              "edge_length": "Not found"
+            },
+            "type": "leaf"
+          }
+        ]
+      ],
+      ")",
+      {
+        "id": "b765a0a3-bb7b-434c-89ad-c4c28ab3a28c",
+        "nodeMetadata": {
+          "name": "name_7a28d72c-6d17-41be-b97a-8d26d9f6f57f",
+          "edge_length": "Not found"
+        },
+        "type": "internal"
+      }
+    ],
+    ")",
+    {
+      "id": "69e1297f-7936-4224-8399-bef471ca42d4",
+      "nodeMetadata": {
+        "name": "name_cfe01d71-1716-4ed6-8f51-255d10920593",
+        "edge_length": "Not found"
+      }
+    }
+  ],
+  ";"
+]

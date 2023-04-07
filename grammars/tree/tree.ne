@@ -13,8 +13,8 @@ TreeWithRoot -> Tree
       // console.log("TreeWithRoot -> Tree")
       
       // Update root node with id, since that id is not created with Node -> NodeProps
-      for (i in data[0][0]) {
-        console.log(i, data[0][0][i]);
+      for (const i in data[0][0]) {
+        // console.log(i, data[0][0][i]);
         if (typeof data[0][0][i] !== 'string' && !Array.isArray(data[0][0][i]) &&  'nodeMetadata' in data[0][0][i]) {
           const aguid = require('aguid');
           data[0][0][i] = { id: aguid(), ...data[0][0][i] };
@@ -79,8 +79,8 @@ RootInternal ->
         data => {
           // console.log("RootLeaf -> ( Branch , BranchSet ) Node");
           // console.log(data)
-          return data;
-          // return [data[0], data[1], data[2], ...data[3], data[4], data[5]];
+          // return data;
+          return [data[0], data[1], data[2], ...data[3], data[4], data[5]];
         }
       %}
 
@@ -98,7 +98,7 @@ BranchSet ->
         data => {
           // console.log(`BranchSet -> Branch "," BranchSet`)
           // console.log(data);
-          return data;
+          return [data[0], data[1], data[2][0]];
         }
       %}
 
@@ -116,7 +116,7 @@ Branch ->
 Subtree ->
     Leaf {% 
       data => { 
-        return data;
+        return [data];
       } 
     %}
   | Internal 
@@ -124,7 +124,7 @@ Subtree ->
         data => {
           // console.log("Subtree");
           // console.log(data);
-          return data
+          return data[0]
         }
       %}
 
