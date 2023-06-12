@@ -2,32 +2,31 @@
   "name": "nearley-newick",
   "version": "0.0.1",
   "description": "Newick tree format parser using nearley.js",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
   "scripts": {
-    "compile-parser": "nearleyc grammars/$GRAMMAR/$GRAMMAR.ne -o grammars/$GRAMMAR/$GRAMMAR.js",
-    "run-parser": "node parse.js $GRAMMAR",
-    "run-generator": "node generate.js $GRAMMAR",
-    "parse": "nearleyc grammars/$GRAMMAR/$GRAMMAR.ne -o grammars/$GRAMMAR/$GRAMMAR.js && node parse.js $GRAMMAR",
-    "generate": "node generate.js $GRAMMAR",
-    "test-parse": "npm run parse tests/ex-0-no-nodes-named.tree,tests/ex-1-leaf-nodes-named.tree,tests/ex-2-all-nodes-named.tree,tests/ex-3-all-but-root-have-distance-to-parent.tree,tests/ex-4-all-have-distance-to-parent.tree,tests/ex-5-distances-and-leaf-names.tree,tests/ex-6-distances-and-all-names.tree,tests/ex-7-tree-rooted-on-leaf-node.tree,tests/polytomy.tree",
-    "test-generate": "npm run generate ast/$GRAMMAR/ex-0-no-nodes-named.ast,ast/$GRAMMAR/ex-1-leaf-nodes-named.ast,ast/$GRAMMAR/ex-2-all-nodes-named.ast,ast/$GRAMMAR/ex-3-all-but-root-have-distance-to-parent.ast,ast/$GRAMMAR/ex-4-all-have-distance-to-parent.ast,ast/$GRAMMAR/ex-5-distances-and-leaf-names.ast,ast/$GRAMMAR/ex-6-distances-and-all-names.ast,ast/$GRAMMAR/ex-7-tree-rooted-on-leaf-node.ast,ast/$GRAMMAR/polytomy.ast"
+    "compile": "node ./node_modules/nearley/bin/nearleyc lib/newick_grammar.ne -o lib/newick_grammar.js",
+    "test": "node ./__tests__/nearley-newick.test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BetweenTwoTests/nearley-newick.git"
+    "url": "git+https://github.com/notung-agi/nearley-newick.git"
   },
   "keywords": [
-    "newick",
-    "nearley",
-    "phylogenetics",
-    "tree"
+    "newick"
   ],
   "author": "BetweenTwoTests",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BetweenTwoTests/nearley-newick/issues"
+    "url": "https://github.com/notung-agi/nearley-newick/issues"
   },
-  "homepage": "https://github.com/BetweenTwoTests/nearley-newick#readme",
+  "homepage": "https://github.com/notung-agi/nearley-newick#readme",
   "dependencies": {
     "aguid": "^2.0.0",
     "nearley": "^2.20.1"
