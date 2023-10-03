@@ -1,5 +1,5 @@
 # nearley-newick
-Newick tree format parser using nearley.js
+Newick tree format parser using nearley.js. This attempts to solve parsing issues that are common in other Newick parsers that rely on stacks to track the most recent `(`. Due to the naturally nested nature of trees, recursion should be leveraged to parse deeply-nested trees. This library uses Nearley.js parser to convert Newick string into Abstract Syntax Tree to encode the tree structure and metadata (node name, edge length, whether the node is leaf or internal).
 
 # Folder structure
 
